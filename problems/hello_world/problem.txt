@@ -1,0 +1,43 @@
+Write a program that connects to a locally running MongoDB MongoD server
+and prints the phrase "HELLO WORLD - WE ARE CONNECTED" to the console
+(stdout).
+
+----------------------------------------------------------------------
+{yellow}{bold}HINTS:{/bold}{/yellow}
+
+To write a Node.js program, make a new file with a `.js` extension and
+start writing JavaScript! Execute your program by running it with the
+`node` command. e.g.:
+
+  {blue}{bold}$ node myprogram.js{/bold}{/blue}
+
+You can write to the console in the same way as in the browser:
+  
+  {green}{bold}console.log("text"){/bold}{/green}
+
+When you are done, you must run:
+
+  {blue}{bold}$ {appname} verify myprogram.js{/bold}{/blue}
+
+to proceed. Your program will be tested, a report will be generated,
+and the lesson will be marked 'completed' if you are successful.
+
+----------------------------------------------------------------------
+{yellow}{bold}NODE.JS MONGODB DRIVER APPROACHES{/bold}{/yellow}
+
+A recommend approach is to use a client variable and use this to manage your
+connection:
+  
+  {green}{bold}var MongoClient = require('mongodb').MongoClient 
+    , format = require('util').format;{/bold}{/green}
+
+A typical approach to connecting to the data with node.js involves a little
+bit of additional error handling and is shown below:
+
+  {bold}{green}MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db) {
+    if(err) throw err;
+
+    // Find / Insert / Create / Delete functions on database
+    
+    db.close();
+    });{/bold}{/green}
