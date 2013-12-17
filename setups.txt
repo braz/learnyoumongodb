@@ -1,0 +1,14 @@
+{yellow}{bold}Install Node.js and MongoDB, then setup a locally running MongoDB server.{/bold}{/yellow}
+----------------------------------------------------------------------
+A running localhost MongoDB server will be required for many of the exercises:.
+You will need to install MongoDB and Node to create the environment for this and the following exercises.
+	- Download MongoDB at: http://mongodb.org/
+	- Download Node at: http://nodejs.org/
+You will need to 'npm install mongodb' to get started with this exercise.
+	- If you see 'require' in a Node program you may need to install the specific module using npm.
+
+A useful page on the node.js driver for MongoDB can be found online at:
+	https://github.com/mongodb/node-mongodb-native
+
+Read more about setting up MongoDB on your machine at:
+	http://docs.mongodb.org/manual/installation/
