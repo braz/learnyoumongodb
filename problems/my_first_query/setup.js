@@ -18,7 +18,9 @@ function setup (run, callback) {
 
 		var collection = db.collection('test')
 		collection.remove()
-		collection.insert(ops, {w:1}, function(err, result) {})
+		collection.insert(ops, {w:1}, function(err, result) {
+			callback(err)
+		})
 
 		db.close()
       }
