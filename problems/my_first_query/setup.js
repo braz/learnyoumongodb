@@ -14,7 +14,9 @@ function setup (run, callback) {
     MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db) {
 	  if(err) throw err
 
-		db.createCollection('test', function(err, collection) {})
+		db.createCollection('test', function(err, collection) {
+			if(err) throw err
+		})
 
 		var collection = db.collection('test')
 		collection.remove()
