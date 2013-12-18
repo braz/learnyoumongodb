@@ -1,3 +1,4 @@
 module.exports = function () {
-  return {}
+  var connection_string = "HELLO WORLD - WE ARE CONNECTED"
+  return { connection_string }
 }
