@@ -26,7 +26,6 @@ function setup (run, callback) {
 			if(err) throw err
 		})
 
-		db.close()
       }
    )
 }
