@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "workshopper": "~0.5.0"
   },
   "bin": "./learnyoumongodb.js",
   "preferGlobal": true
