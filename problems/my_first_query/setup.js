@@ -18,12 +18,11 @@ function setup (run, callback) {
 			if(err) throw err
 		})
 
-		var collection = db.collection('test')
-		collection.remove( function(err) {
+		db.collection('test').remove( function(err) {
 			if(err) throw err
 		}
 	
-		collection.insert(ops, {w:0}, function(err, result) {
+		db.collection('test').insert(ops, {w:0}, function(err, result) {
 			if(err) throw err
 		})
 
