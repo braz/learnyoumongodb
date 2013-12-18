@@ -20,9 +20,9 @@ function setup (run, callback) {
 
 		db.collection('test').remove( function(err) {
 			if(err) throw err
-		}
+		})
 	
-		db.collection('test').insert(ops, {w:0}, function(err, result) {
+		db.collection('test').insert(ops, {w:0}, function(err, result)1 {
 			if(err) throw err
 		})
 
