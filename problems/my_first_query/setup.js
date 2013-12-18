@@ -19,7 +19,7 @@ function setup (run, callback) {
 		var collection = db.collection('test')
 		collection.remove()
 		collection.insert(ops, {w:1}, function(err, result) {
-			callback(err)
+			if(err) throw err
 		})
 
 		db.close()
