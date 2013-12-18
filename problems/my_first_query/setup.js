@@ -22,7 +22,7 @@ function setup (run, callback) {
 			if(err) throw err
 		})
 	
-		db.collection('test').insert(ops, {w:0}, function(err, result)1 {
+		db.collection('test').insert(ops, {w:0}, function(err, result) {
 			if(err) throw err
 		})
 
