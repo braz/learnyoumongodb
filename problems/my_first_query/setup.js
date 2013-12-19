@@ -29,9 +29,8 @@ function setup () {
 
       }
    )
-   console.log("about to return")
    return
 }
 
 module.exports			= setup
-module.exports.async	= true
+module.exports.async	= false
