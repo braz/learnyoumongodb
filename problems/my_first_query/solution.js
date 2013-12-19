@@ -12,4 +12,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db
         console.dir(object)
     })
 
+    // Close the connection with a callback that is optional
+  	db.close(function(err, result) {
+    	assert.equal(null, err)
+  	})
 })

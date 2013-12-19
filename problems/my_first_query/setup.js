@@ -14,19 +14,27 @@ module.exports = function () {
   	  , format = require('util').format
     
     MongoClient.connect(server, function(err, db) {
-	  if(err) throw err
+	  if (err) throw err
 
 		db.createCollection('test', function(err, collection) {
-			if(err) throw err
+			if (err) throw err
 		})
 
 		db.collection('test').remove( function(err) {
-			if(err) throw err
+			if (err) throw err
 		})
 	
-		db.collection('test').insert(ops, {w:1}, function(err, result) {
-			if(err) throw err
+		db.collection('test').insert(ops, {w:1, fsync:true}, function(err, result) {
+			if (err) console.warn(err.message);
+			if (err && err.message.indexOf('E11000 ') !== -1) {
+				// this _id was already inserted into the database
+			}
 		})
+
+		// Close the connection with a callback that is optional
+  		db.close(function(err, result) {
+    		assert.equal(null, err)
+  		})
 
       }
    )
