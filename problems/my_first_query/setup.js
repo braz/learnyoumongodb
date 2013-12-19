@@ -1,4 +1,4 @@
-function setup (run, callback) {
+function setup () {
 
 	var ops = []
 	  , i   = 5
@@ -29,8 +29,8 @@ function setup (run, callback) {
 
       }
    )
-
-   return callback
+   console.log("about to return")
+   return
 }
 
 module.exports			= setup
