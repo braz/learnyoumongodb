@@ -1,26 +1,26 @@
 module.exports = function () {
-	var server = 'mongodb://127.0.0.1:27017/learnmymongodb'
+	var server = 'mongodb://127.0.0.1:27017/learnmymongodb';
 	var ops = []
 	  , i   = 5
-	  , k
+	  , k;
 
 	while (i-- > 0) {
-		k = Math.floor(Math.random() * (i == 1 ? 50 : 150))
-		ops.push( { value: k} )
+		k = Math.floor(Math.random() * (i == 1 ? 50 : 150));
+		ops.push( { value: k} );
 	}
     
     var MongoClient = require('mongodb').MongoClient 
-  	  , format = require('util').format
+  	  , format = require('util').format;
     
     MongoClient.connect(server, function(err, db) {
-	  if (err) throw err
+	  if (err) throw err;
 
 		db.createCollection('test', function(err, collection) {
-			if (err) throw err
+			if (err) throw err;
 		})
 
 		db.collection('test').remove( function(err) {
-			if (err) throw err
+			if (err) throw err;
 		})
 	
 		db.collection('test').insert(ops, {w:1, fsync:true}, function(err, result) {
@@ -31,8 +31,6 @@ module.exports = function () {
 		})
       }
    )
-
-   setTimeout(function () {}, 2)
 
    return {
    	  args   : []
