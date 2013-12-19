@@ -13,6 +13,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db
       .toArray(function(err, object) {
         if (err) console.warn(err.message);
         console.dir(object);
-        db.close();
+        db.close(function(err, result) {
+        	if (err) console.warn(err.message);
+        });
     });
 });
