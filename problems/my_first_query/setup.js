@@ -1,4 +1,5 @@
-function setup () {
+module.exports = function () {
+	var server = 'mongodb://127.0.0.1:27017/learnmymongodb'
 
 	var ops = []
 	  , i   = 5
@@ -12,7 +13,7 @@ function setup () {
     var MongoClient = require('mongodb').MongoClient 
   	  , format = require('util').format
     
-    MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db) {
+    MongoClient.connect(server, function(err, db) {
 	  if(err) throw err
 
 		db.createCollection('test', function(err, collection) {
@@ -29,8 +30,9 @@ function setup () {
 
       }
    )
-   return
+   return {
+   	  args   : []
+   	 , stdin : null
+   	 , long  : true
+   }
 }
-
-module.exports			= setup
-module.exports.async	= false
