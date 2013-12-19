@@ -24,7 +24,7 @@ module.exports = function () {
 			if(err) throw err
 		})
 	
-		db.collection('test').insert(ops, {w:0}, function(err, result) {
+		db.collection('test').insert(ops, {w:1}, function(err, result) {
 			if(err) throw err
 		})
 
