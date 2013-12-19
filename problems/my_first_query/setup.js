@@ -1,6 +1,5 @@
 module.exports = function () {
 	var server = 'mongodb://127.0.0.1:27017/learnmymongodb'
-
 	var ops = []
 	  , i   = 5
 	  , k
@@ -31,6 +30,7 @@ module.exports = function () {
 			}
 		})
 
+		var assert = require('assert')
 		// Close the connection with a callback that is optional
   		db.close(function(err, result) {
     		assert.equal(null, err)
