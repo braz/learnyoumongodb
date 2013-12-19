@@ -1,4 +1,5 @@
 function setup (run, callback) {
+
 	var ops = []
 	  , i   = 5
 	  , k
@@ -28,9 +29,9 @@ function setup (run, callback) {
 
       }
    )
+
+   return callback
 }
 
 module.exports			= setup
 module.exports.async	= true
-
-console.log("completed setup")
