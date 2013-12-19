@@ -29,13 +29,6 @@ module.exports = function () {
 				// this _id was already inserted into the database
 			}
 		})
-
-		var assert = require('assert')
-		// Close the connection with a callback that is optional
-  		db.close(function(err, result) {
-    		assert.equal(null, err)
-  		})
-
       }
    )
 
