@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function (run) {
 	var server = 'mongodb://127.0.0.1:27017/learnmymongodb'
 
 	var ops = []
@@ -30,6 +30,9 @@ module.exports = function () {
 
       }
    )
+
+   setTimeout(function () {}, 500)
+
    return {
    	  args   : []
    	 , stdin : null
