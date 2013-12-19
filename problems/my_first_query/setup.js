@@ -32,3 +32,5 @@ function setup (run, callback) {
 
 module.exports			= setup
 module.exports.async	= true
+
+console.log("completed setup")
