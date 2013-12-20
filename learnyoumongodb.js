@@ -8,6 +8,6 @@ Workshopper({
   , title    : 'LEARN YOU THE MONGODB FOR MUCH WIN!'
   , appDir   : __dirname
   , helpFile : path.join(__dirname, 'help.txt')
-  , setupsFile : path.join(__dirname, 'setups.txt')
+  , prerequisitesFile : path.join(__dirname, 'prerequisites.txt')
   , creditsFile : path.join(__dirname, 'credits.txt')
 }).init()
