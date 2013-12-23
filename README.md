@@ -1,5 +1,8 @@
 # Learn You The MongoDB For Much Win!
 
+![Learn You The MongoDB For Much Win !](https://github.com/braz/learnyoumongodb/raw/master/learnyoumongodb-screenshot.png)
+
+
 **An intro to MongoDB via a set of self-guided workshops.**
 
   1. Install [Node.js](http://nodejs.org/)
