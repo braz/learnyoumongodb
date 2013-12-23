@@ -16,7 +16,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db
         if (err) console.warn(err.message);
 
       db.collection('test2')
-      .find(doc, {fields: {_id:0}})
+      .find(upsertdoc, {fields: {_id:0}})
       .toArray(function(err, object) {
         if (err) console.warn(err.message);
         console.dir(object);
