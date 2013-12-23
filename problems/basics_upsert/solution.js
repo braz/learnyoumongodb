@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/learnmymongodb', function(err, db
 
     var collection = db
       .collection('test2')
-      .update(olddoc, {$set: upsertdoc}, {w:1, upsert:true, multi:true}, function(err, object) {
+      .update(olddoc, {$set: upsertdoc}, {w:1, upsert:true}, function(err, object) {
         if (err) console.warn(err.message);
 
       db.collection('test2')
