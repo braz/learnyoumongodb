@@ -14,6 +14,21 @@
   "dependencies": {
     "workshopper": "~0.6.0"
   },
-  "bin": "./learnyoumongodb.js",
-  "preferGlobal": true
+  "bin": {
+    "learnyoumongodb": "./learnyoumongodb.js"
+  },
+  "preferGlobal": true,
+  "bugs": {
+    "url": "https://github.com/braz/learnyoumongodb/issues"
+  },
+  "homepage": "https://github.com/braz/learnyoumongodb",
+  "main": "learnyoumongodb.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "workshopper",
+    "mongodb"
+  ]
 }
