@@ -1,4 +1,5 @@
 Additional help is available online using the MongoDB docs at:
   http://docs.mongodb.org/manual/
 
-If you have specific questions, email eoin@mongodb.com.
+It is recommended that you have taken the basic Node.JS ioschool modules at:
+  http://nodeschool.io
