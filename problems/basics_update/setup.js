@@ -11,7 +11,7 @@ module.exports = function (run) {
     }
 
     db.collection('test2', function(err, collection) {
-        var stream = collection.find({"Learning":"NoSQL with MongoDB"}, {"fields": {_id:0}}).stream();
+        var stream = collection.find({"Learning" : "NoSQL with MongoDB"}).stream();
         stream.on("data", function(item) {
           console.dir(item); 
         });
