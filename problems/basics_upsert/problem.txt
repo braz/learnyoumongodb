@@ -1,0 +1,35 @@
+Write a program that opens a MongoDB database '{bold}learnmymongodb{/bold}',
+and updates all the entries in the collection '{bold}test2{/bold}' using the
+upsert paramter with the update function. This allows you to create a document
+if one does not exist or otherwise it update the existing document/s in the
+database.
+
+The existing document/ take the format:
+
+{blue}{bold}{
+	"Learning" : "MongoDB"
+}{/blue}{/bold}
+
+
+The updated document/s should take the format:
+
+{blue}{bold}{
+	"Learning" : "NoSQL with MongoDB"
+}{/blue}{/bold}
+
+Your solution will be verified by the output to the console from your query.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/learnmymongodb'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS:
+
+{grey}{italic}// Update / upsert all found documents in a collection.{/grey}{/italic}
+{blue}{bold}{
+	collection.update({"Learning":"MongoDB"}, {$set:{"Learning":"NoSQL with MongoDB"}}, {upsert:true, multi:true, w:1});
+  });{/blue}{/bold}
+
+There are a variety of ways to use the upsert functionality and a good
+reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#findandmodify{/yellow}
