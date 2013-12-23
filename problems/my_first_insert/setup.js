@@ -11,9 +11,9 @@ module.exports = function () {
     }
 
     db.collection('test2', function(err, collection) {
-        var stream = collection.find({"Learning":"MongoDB"}).stream();
+        var stream = collection.find({"Learning":"MongoDB"}, {"fields": {_id:0}}).stream();
         stream.on("data", function(item) {
-          console.log(item); 
+          console.dir(item); 
         });
         
         stream.on("end", function() {

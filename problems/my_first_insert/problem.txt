@@ -1,7 +1,8 @@
 Write a program that opens a MongoDB database '{bold}learnmymongodb{/bold}',
 create a new collection '{bold}test2{/bold}', insert a document into
 the collection just created, '{bold}test2{/bold}' and return this document
-as part of a query.
+as part of a query excluding the '{bold}_id{/bold}' (ObjectID) of the
+document.
 
 The document should be written as:
 
@@ -29,6 +30,12 @@ HINTS:
 {blue}{bold}{
   collection.insert({"Learning" : "MongoDB"}, {w:1}, function(err, result) {
     assert.equal(null, err);
+  });{/blue}{/bold}
+
+{grey}{italic}// To return a document excluding or including a specific field
+you can use the "fields" attribute and supply it with a list of value to filter.{/grey}{/italic}
+{blue}{bold}{
+	collection.find({"Learning":"MongoDB"}, {"fields": {_id:0}});
   });{/blue}{/bold}
 
 There are a variety of ways to use the insert functionality and a good
