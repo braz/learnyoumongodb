@@ -1,8 +1,6 @@
 Write a program that opens a MongoDB database '{bold}learnmymongodb{/bold}',
 and updates all the entries in the collection '{bold}test2{/bold}' using the
-upsert paramter with the update function. This allows you to create a document
-if one does not exist or otherwise it update the existing document/s in the
-database.
+write concern parameter with the update function.
 
 The existing document/ take the format:
 
@@ -27,9 +25,9 @@ HINTS:
 
 {grey}{italic}// Update / upsert all found documents in a collection.{/grey}{/italic}
 {blue}{bold}{
-	collection.update({"Learning":"MongoDB"}, {$set:{"Learning":"NoSQL with MongoDB"}}, {upsert:true, multi:true, w:1});
+	collection.update({"Learning":"MongoDB"}, {$set:{"Learning":"NoSQL with MongoDB"}}, {w:1});
   });{/blue}{/bold}
 
-There are a variety of ways to use the upsert functionality and a good
+There are a variety of ways to use the update functionality and a good
 reference can be found at:
-{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#findandmodify{/yellow}
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html{/yellow}
