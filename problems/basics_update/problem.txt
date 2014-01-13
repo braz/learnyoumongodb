@@ -2,7 +2,7 @@ Write a program that opens a MongoDB database '{bold}learnmymongodb{/bold}',
 and updates all the entries in the collection '{bold}test2{/bold}' using the
 write concern parameter with the update function.
 
-The existing document/ take the format:
+The existing document/s take the format:
 
 {blue}{bold}{
 	"Learning" : "MongoDB"
@@ -23,7 +23,7 @@ the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/lea
 ----------------------------------------------------------------------
 HINTS:
 
-{grey}{italic}// Update / upsert all found documents in a collection.{/grey}{/italic}
+{grey}{italic}// Update all the found documents in a collection.{/grey}{/italic}
 {blue}{bold}{
 	collection.update({"Learning":"MongoDB"}, {$set:{"Learning":"NoSQL with MongoDB"}}, {w:1});
   });{/blue}{/bold}

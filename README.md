@@ -1,5 +1,7 @@
 # Learn You The MongoDB For Much Win!
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/braz/learnyoumongodb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 ![Learn You The MongoDB For Much Win !](https://github.com/braz/learnyoumongodb/raw/master/learnyoumongodb-screenshot.png)
 
 
