@@ -1,0 +1,52 @@
+Write a {bold}module{/bold} (not a program) that exports a single function.
+The function should accept three arguments:
+	i) a URL / IP address with port and database name
+	ii) an age string
+	iii) a callback function
+
+In this exercise, you will can use the database '{bold}learnmymongodb{/bold}'
+running on your localhost (127.0.0.1) on port 27017 for your solution with the
+collection 'userdetails' being where the user information is stored. The age
+string should be used to look for users with that age or who are older than
+that age, in this exercise it is users who are 27 years of age or older that
+you will search for. Your module and function should return {bold}the number
+of users / documents that meet this criteria{/bold}.
+
+The first argument returned by your callback should be an {italic}error{/italic}, if
+either an error occured or the query result returned a null. The second argument,
+if there was no error, should be an integer, which represents the number of users
+whose age is equal or older to 27 years of age in the database.
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query is targeting the correct age range of users.
+
+The existing documents take the format in the collection 'userdetails':
+
+{blue}{bold}{ "firstname" : "tony",
+	"lastname" : "smith", 
+	"age" : "35", 
+	"username" : "tsmith", 
+	"email" : "tsmith@smith.com", 
+	"_id" : ObjectId("XXXX") 
+}{/blue}{/bold}
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/learnmymongodb'{/yellow}{/bold}.
+The collection will be {yellow}{bold}'userdetails'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS:
+
+Use this boilerplate to get started with your module file:
+
+module.exports = function (db, age, callback) {
+    // .. your code here
+  }
+
+In this exercise, you will need to use the `collection.find().stream()`
+method but you will need to restrict the find to the range of ages specified.
+
+The collection document reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html{/yellow}
+and on streaming reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/cursorstream.html{/yellow}
