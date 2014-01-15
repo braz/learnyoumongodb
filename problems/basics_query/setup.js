@@ -1,6 +1,4 @@
 function setup (run, callback) {
-  existing.setup(run)
-
   var us = require('underscore');
   var fs = require('fs');
   var async = require('async');
