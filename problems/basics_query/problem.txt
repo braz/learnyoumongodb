@@ -1,9 +1,3 @@
-Write a {bold}module{/bold} (not a program) that exports a single function.
-The function should accept three arguments:
-	i) a URL / IP address with port and database name
-	ii) an age string
-	iii) a callback function
-
 In this exercise, you will can use the database '{bold}learnmymongodb{/bold}'
 running on your localhost (127.0.0.1) on port 27017 for your solution with the
 collection 'userdetails' being where the user information is stored. The age
@@ -36,12 +30,6 @@ The collection will be {yellow}{bold}'userdetails'{/yellow}{/bold}.
 
 ----------------------------------------------------------------------
 HINTS:
-
-Use this boilerplate to get started with your module file:
-
-module.exports = function (db, age, callback) {
-    // .. your code here
-  }
 
 In this exercise, you will need to use the `collection.find().stream()`
 method but you will need to restrict the find to the range of ages specified.

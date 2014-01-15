@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "workshopper": "~0.6.0"
+    "workshopper": "~0.6.0",
+    "through2": "~0.2.1"
   },
   "bin": {
     "learnyoumongodb": "./learnyoumongodb.js"
