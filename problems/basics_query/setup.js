@@ -62,7 +62,7 @@ function setup (run, callback) {
           if (err) return callback(err);
         
         db.createCollection(collectionname, {strict:true}, function(err, collection) {
-            if (err) console.warn(err.message); // assume collection exists and log to console, without error it'll be created straight
+            //if (err) console.warn(err.message); // assume collection exists and log to console, without error it'll be created straight
                 
               db.collection(collectionname).remove( function(err) {
                 if (err) return callback(err);
