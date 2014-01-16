@@ -18,16 +18,6 @@ module.exports = function () {
   var seek_this_age_or_older = "older_than_or_equal_to_years";
 
   async.series([
-    // Deterime if the specified file exits
-      function(callback) {
-        fs.exists(userdetailsfile, function(exists) {
-          var err = null;
-          if (!exists) {
-            err = new Error('File does not exist \'' + userdetailsfile + '\'');
-          }
-          return callback(err);
-        });
-      },
       // Read the file information and save to 'userdetails' JSON document and then
       // ... get a random age from the available range in the userdetails / results
       function(callback) {

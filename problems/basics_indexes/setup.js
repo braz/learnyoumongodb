@@ -23,10 +23,6 @@ module.exports = function () {
       function(callback) {
         var err = null;
 
-        fs.readFile(userdetailsfile, 'utf8', function(err, data) {
-        if (!data) {
-          err = new Error('Unable to read file \'' + userdetailsfile + '\'');
-        }
         userdetailsdoc = JSON.parse(data);
         youngest_age = us.chain(userdetailsdoc)
           .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
