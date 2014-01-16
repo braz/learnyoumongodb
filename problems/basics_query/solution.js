@@ -19,6 +19,9 @@ MongoClient.connect(server, function(err, db) {
         db.collection(collectionname).find({age: { $gte: query_age_doc.seek_this_age_or_older }}).count( function(err, number) {
             if (err) console.warn(err.message);
             console.log(number);
+              db.close(function(err, result) {
+                if (err) console.warn(err.message);
+              }); // end close
         });
     }));
 }) // connect
