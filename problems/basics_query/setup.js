@@ -1,8 +1,8 @@
 module.exports = function () {
+  const userdetailsfile  = require('../../data/user.json')
   var us = require('underscore');
   var fs = require('fs');
   var async = require('async');
-  var userdetailsfile = 'user.json';
 
   // Global definition for variables
   var userdetailsdoc;
