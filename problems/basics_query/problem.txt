@@ -1,4 +1,4 @@
-In this exercise, you will can use the database '{bold}learnmymongodb{/bold}'
+In this exercise, you will use the database '{bold}learnmymongodb{/bold}'
 running on your localhost (127.0.0.1) on port 27017 for your solution with the
 collection 'userdetails' being where the user information is stored. 
 
