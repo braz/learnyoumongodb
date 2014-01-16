@@ -1,7 +1,6 @@
 module.exports = function () {
-  const userdetailsfile  = require('../../data/user.json')
+  const userdetailsfile  = require('../../data/user.json');
   var us = require('underscore');
-  var fs = require('fs');
   var async = require('async');
 
   // Global definition for variables
@@ -18,15 +17,11 @@ module.exports = function () {
   var seek_this_age_or_older = "older_than_or_equal_to_years";
 
   async.series([
-      // Read the file information and save to 'userdetails' JSON document and then
+      // Read the file 'userdetails' JSON document and then
       // ... get a random age from the available range in the userdetails / results
       function(callback) {
         var err = null;
 
-        fs.readFile(userdetailsfile, 'utf8', function(err, data) {
-        if (!data) {
-          err = new Error('Unable to read file \'' + userdetailsfile + '\'');
-        }
         userdetailsdoc = JSON.parse(data);
         youngest_age = us.chain(userdetailsdoc)
           .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
@@ -42,11 +37,9 @@ module.exports = function () {
 
       random_age_in_range = us.random(parseInt(youngest_age), parseInt(oldest_age));
       random_age_data = { seek_this_age_or_older : random_age_in_range };
-        return callback(err);
-        });
       },
       // Taking the earlier data that was stored into global variables, then add it to
-      // ... the database so we can run the exerciseß
+      // ... the database so we can run the exercise
       function(callback) {
         MongoClient.connect(server, function(err, db) {
           if (err) return callback(err);
