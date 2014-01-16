@@ -88,6 +88,7 @@ function setup (run, callback) {
     if (err) console.warn(err.message);
   });
 
+  return { args: [], stdin: null }
 } // function setup (run, callback)
 
 module.exports       = setup
