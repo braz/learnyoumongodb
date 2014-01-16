@@ -1,4 +1,4 @@
-function setup (run, callback) {
+module.exports = function () {
   var us = require('underscore');
   var fs = require('fs');
   var async = require('async');
@@ -89,7 +89,4 @@ function setup (run, callback) {
   });
 
   return { args: [], stdin: null }
-} // function setup (run, callback)
-
-module.exports       = setup
-module.exports.async = true
+}
