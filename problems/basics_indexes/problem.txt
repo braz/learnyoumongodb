@@ -1,9 +1,6 @@
-In this exercise, you will use the database '{bold}learnmymongodb{/bold}'
-running on your localhost (127.0.0.1) on port 27017 for your solution with the
-collection 'userdetails' being where the user information is stored. 
+In this exercise, you will use the database '{bold}learnmymongodb{/bold}' running on your localhost (127.0.0.1) on port 27017 for your solution with the collection 'userdetails' being where the user information is stored. 
 
-You will need to create two indexes for this collection, perform three queries
-using these indexes with the explain() method and output the state (true or false) from MongoDB as to whether its query engine was able to use the specific index to both perform the query and then also to sort the data return within that query.
+You will need to create two indexes for this collection, perform three queries using these indexes with the explain() method and output the state (true or false) from MongoDB as to whether its query engine was able to use the specific index to both perform the query and then also to sort the data return within that query.
 
 The existing documents in the collection 'userdetails' take the following format:
 

@@ -16,38 +16,38 @@ MongoClient.connect(server, function(err, db) {
         var collection = db.collection(collectionname);
         collection.createIndex({age:1}, {w:1}, function(err, indexName) {
             if (err) console.warn(err.message);
-        })// createIndex 1
+        });// createIndex 1
          collection.createIndex({firstname:1, lastname:1}, {w:1}, function(err, indexName) {
             if (err) console.warn(err.message);
-        })// createIndex 2
+        });// createIndex 2
       },
     function(callback) {
         var collection = db.collection(collectionname);
-        collection.find({age: { $gte: 25 }}).explain( (function(err, explaination) {
+        collection.find({age: { $gte: 25 }}).explain(function(err, explaination) {
             if (err) console.warn(err.message);
             console.log(explaination.scanAndOrder);
         }); // first query with explain
       },
     function(callback) {
         var collection = db.collection(collectionname);
-        collection.find({age: { $lte: 35 }}).sort({firstname:1, secondname:1}).explain( (function(err, explaination) {
+        collection.find({age: { $lte: 35 }}).sort({firstname:1, secondname:1}).explain(function(err, explaination) {
             if (err) console.warn(err.message);
             console.log(explaination.scanAndOrder);
         }); // second query with explain
       },
     function(callback) {
         var collection = db.collection(collectionname);
-        collection.find({firstname: "dominic"}).sort({firstname:1, secondname:1}).explain( (function(err, explaination) {
+        collection.find({firstname: "dominic"}).sort({firstname:1, secondname:1}).explain(function(err, explaination) {
             if (err) console.warn(err.message);
             console.log(explaination.scanAndOrder);
             db.close(function(err, result) {
                 if (err) console.warn(err.message);
             }); // end close
         }); // third query with explain
-      },
+      }
   ],
   // callback and error handling
   function(err, results) {
     if (err) console.warn(err.message);
   });
-}) // connect
+}); // connect
