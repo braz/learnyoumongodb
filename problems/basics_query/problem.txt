@@ -15,7 +15,7 @@ The other documents take the format in the collection 'userdetails':
 
 {blue}{bold}{ "firstname" : "tony",
 	"lastname" : "smith", 
-	"age" : "35", 
+	"age" : 35, 
 	"username" : "tsmith", 
 	"email" : "tsmith@smith.com", 
 	"_id" : ObjectId("XXXX") 
@@ -43,5 +43,5 @@ the age range to search.
 
 The collection document reference can be found at:
 {yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html{/yellow}
-and on streaming reference can be found at:
+and the streaming reference can be found at:
 {yellow}http://mongodb.github.io/node-mongodb-native/api-generated/cursorstream.html{/yellow}
