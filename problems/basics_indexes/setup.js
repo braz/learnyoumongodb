@@ -42,8 +42,8 @@ module.exports = function () {
               }); //db.remove
           }); //db.createCollection
       }); // MongoClient.connect
+      callback(null);
     } // callback
-    callback(null);
   ],
   // callback and error handling
   function(err, results) {
