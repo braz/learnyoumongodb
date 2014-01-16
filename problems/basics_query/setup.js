@@ -26,14 +26,15 @@ module.exports = function () {
           .first()
           .value();
 
-          oldest_age = us.chain(userdetailsdoc)
-              .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
-              .map(function(userdetailsdoc){ return userdetailsdoc.age;})
-              .last()
-              .value();
+        oldest_age = us.chain(userdetailsdoc)
+          .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
+          .map(function(userdetailsdoc){ return userdetailsdoc.age;})
+          .last()
+          .value();
 
-          random_age_in_range = us.random(parseInt(youngest_age), parseInt(oldest_age));
-          random_age_data = { seek_this_age_or_older : random_age_in_range };
+        random_age_in_range = us.random(parseInt(youngest_age), parseInt(oldest_age));
+        random_age_data = { seek_this_age_or_older : random_age_in_range };
+        callback(null);
       },
       // Taking the earlier data that was stored into global variables, then add it to
       // ... the database so we can run the exercise
@@ -41,7 +42,7 @@ module.exports = function () {
         MongoClient.connect(server, function(err, db) {
           if (err) return callback(err);
         
-        db.createCollection(collectionname, {strict:true}, function(err, collection) {
+          db.createCollection(collectionname, {strict:true}, function(err, collection) {
             //if (err) console.warn(err.message); // assume collection exists and log to console, without error it'll be created straight
                 
               db.collection(collectionname).remove( function(err) {
@@ -61,6 +62,7 @@ module.exports = function () {
               }); //db.remove
           }); //db.createCollection
       }); // MongoClient.connect
+      callback(null);
     } // callback
   ],
   // callback and error handling

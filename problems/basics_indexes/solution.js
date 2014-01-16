@@ -15,35 +15,39 @@ MongoClient.connect(server, function(err, db) {
       function(callback) {
         var collection = db.collection(collectionname);
         collection.createIndex({age:1}, {w:1}, function(err, indexName) {
-            if (err) console.warn(err.message);
+            if (err) callback(err);
         });// createIndex 1
          collection.createIndex({firstname:1, lastname:1}, {w:1}, function(err, indexName) {
-            if (err) console.warn(err.message);
+            if (err) callback(err);
         });// createIndex 2
+        callback(null);
       },
     function(callback) {
         var collection = db.collection(collectionname);
         collection.find({age: { $gte: 25 }}).explain(function(err, explaination) {
-            if (err) console.warn(err.message);
+            if (err) callback(err);
             console.log(explaination.scanAndOrder);
         }); // first query with explain
+        callback(null);
       },
     function(callback) {
         var collection = db.collection(collectionname);
         collection.find({age: { $lte: 35 }}).sort({firstname:1, secondname:1}).explain(function(err, explaination) {
-            if (err) console.warn(err.message);
+            if (err) callback(err);
             console.log(explaination.scanAndOrder);
         }); // second query with explain
+        callback(null);
       },
     function(callback) {
         var collection = db.collection(collectionname);
         collection.find({firstname: "dominic"}).sort({firstname:1, secondname:1}).explain(function(err, explaination) {
-            if (err) console.warn(err.message);
+            if (err) callback(err);
             console.log(explaination.scanAndOrder);
             db.close(function(err, result) {
-                if (err) console.warn(err.message);
+                if (err) callback(err);
             }); // end close
         }); // third query with explain
+        callback(null);
       }
   ],
   // callback and error handling

@@ -43,6 +43,7 @@ module.exports = function () {
           }); //db.createCollection
       }); // MongoClient.connect
     } // callback
+    callback(null);
   ],
   // callback and error handling
   function(err, results) {
