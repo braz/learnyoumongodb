@@ -1,11 +1,9 @@
 module.exports = function () {
   var us = require('underscore');
-  var fs = require('fs');
   var async = require('async');
-  const userdetailsfile  = require('../../data/user2.json');
+  const userdetailsdoc  = require('../../data/user2.json');
 
   // Global definition for variables
-  var userdetailsdoc;
   var youngest_age;
   var oldest_age;
   var random_age_in_range;

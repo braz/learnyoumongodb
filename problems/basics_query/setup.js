@@ -1,10 +1,9 @@
 module.exports = function () {
-  const userdetailsfile  = require('../../data/user.json');
+  const userdetailsdoc  = require('../../data/user.json');
   var us = require('underscore');
   var async = require('async');
 
   // Global definition for variables
-  var userdetailsdoc;
   var youngest_age;
   var oldest_age;
   var random_age_in_range;
@@ -21,22 +20,20 @@ module.exports = function () {
       // ... get a random age from the available range in the userdetails / results
       function(callback) {
         var err = null;
-
-        userdetailsdoc = JSON.parse(data);
         youngest_age = us.chain(userdetailsdoc)
           .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
           .map(function(userdetailsdoc){ return userdetailsdoc.age;})
           .first()
           .value();
 
-      oldest_age = us.chain(userdetailsdoc)
-          .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
-          .map(function(userdetailsdoc){ return userdetailsdoc.age;})
-          .last()
-          .value();     
+          oldest_age = us.chain(userdetailsdoc)
+              .sortBy(function(userdetailsdoc){ return userdetailsdoc.age; })
+              .map(function(userdetailsdoc){ return userdetailsdoc.age;})
+              .last()
+              .value();
 
-      random_age_in_range = us.random(parseInt(youngest_age), parseInt(oldest_age));
-      random_age_data = { seek_this_age_or_older : random_age_in_range };
+          random_age_in_range = us.random(parseInt(youngest_age), parseInt(oldest_age));
+          random_age_data = { seek_this_age_or_older : random_age_in_range };
       },
       // Taking the earlier data that was stored into global variables, then add it to
       // ... the database so we can run the exercise
