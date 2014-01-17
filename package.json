@@ -1,7 +1,7 @@
 {
   "name": "learnyoumongodb",
-  "version": "0.1.4",
-  "description": "Learn You MongoDB For Much Win! An intro to MongoDB via a set of self-guided workshops.",
+  "version": "0.2.0",
+  "description": "Learn You MongoDB For Much Win! An introduction to MongoDB via a set of self-guided workshops.",
   "author": "Eoin Brazil <braz@mongodb.com> (https://github.com/braz)",
   "contributors": [
     "Eoin Brazil <eoin.brazil@gmail.com> (https://github.com/braz)"

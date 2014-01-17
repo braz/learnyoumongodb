@@ -1,0 +1,33 @@
+In this exercise, you will create a NEW database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will create a NEW collection '{bold}mycollection{/bold}'.
+
+You will then insert the following documents (3) into your collection '{bold}mycollection{/bold}' to populate it with some data.
+
+{blue}{bold}{"name": "Daffy", "animal": "Duck"}{/blue}{/bold}
+{blue}{bold}{"name": "Donald", "animal": "Duck"}{/blue}{/bold}
+{blue}{bold}{"name": "Howard", "animal": "Duck"}{/blue}{/bold}
+
+You will then perform a findAndModify operation on the record whose 'name' field that contains the value 'Howard' and set the 'name' field to the value 'Howard the Duck'. The operation should return this modified record to the console.
+
+Stage 1 - Create the database 'mydatabase' and then create the collection 'mycollection'.
+
+Stage 2 - Insert the three (3) documents into the collection 'mycollection'.
+
+Stage 3 - Perform a findAndModify to set the record with a 'name' field of 'Howard' and set the 'name' field to 'Howard the Duck' and return this modified record to the console.
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query returns the correctly modified document.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/yellow}{/bold}. You will create the database and collection you will use for this exercise as part of the exercise.
+
+----------------------------------------------------------------------
+HINTS:
+
+In this exercise, you will need to use the `findAndModify()` method with the 'new' option set to 'TRUE' to return the modified document.
+
+The database API document reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/db.html{/yellow}
+and the findAndModify method reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/markdown-docs/insert.html{/yellow}
+
+

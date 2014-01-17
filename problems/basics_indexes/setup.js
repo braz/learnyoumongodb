@@ -22,24 +22,20 @@ module.exports = function () {
         MongoClient.connect(server, function(err, db) {
           if (err) return callback(err);
         
-        db.createCollection(collectionname, {strict:true}, function(err, collection) {
+          db.createCollection(collectionname, {strict:true}, function(err, collection) {
             //if (err) console.warn(err.message); // assume collection exists and log to console, without error it'll be created straight
                 
-              db.collection(collectionname).remove( function(err) {
-                if (err) return callback(err);
-                  
-                db.collection(collectionname).insert(userdetailsdoc, {w:1, fsync:true}, function(err, result) {
-                      if (err) return callback(err);              
+            db.collection(collectionname).remove( function(err) {
+              if (err) return callback(err);
+                
+              db.collection(collectionname).insert(userdetailsdoc, {w:1, fsync:true}, function(err, result) {
+                if (err) return callback(err);              
 
-                      db.close(function(err, result) {
-                        if (err) return callback(err);
-                      }); //db.close      
-
-                    //db.collection(collectionname).insert(random_age_data, {w:1, fsync:true}, function(err, result) {
-                    //  if (err) return callback(err);
-                    //  }); // db.insert 2  
-                  }); // db.insert 1
-              }); //db.remove
+                db.close(function(err, result) {
+                  if (err) return callback(err);
+                }); //db.close      
+              }); // db.insert 1
+            }); //db.remove
           }); //db.createCollection
       }); // MongoClient.connect
       callback(null);

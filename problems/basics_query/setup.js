@@ -54,10 +54,10 @@ module.exports = function () {
                     db.collection(collectionname).insert(random_age_data, {w:1, fsync:true}, function(err, result) {
                       if (err) return callback(err);
 
-                db.close(function(err, result) {
-                  if (err) return callback(err);
-                }); //db.close      
-                      }); // db.insert 2  
+                      db.close(function(err, result) {
+                        if (err) return callback(err);
+                      }); //db.close      
+                    }); // db.insert 2  
                   }); // db.insert 1
               }); //db.remove
           }); //db.createCollection
