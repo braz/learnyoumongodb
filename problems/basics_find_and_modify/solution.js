@@ -14,7 +14,7 @@ MongoClient.connect(server, function(err, db) {
         console.warn(err.message);
         return;
     }
- async.series([
+ 	async.series([
     // Deterime if the specified database exits
     function(callback) {
   		// Check for the specific database twice then proceed or exit and further checks for collection in the database
@@ -69,12 +69,12 @@ MongoClient.connect(server, function(err, db) {
      function(callback) {
 
 	 	var documents_to_insert = [{"name": "Daffy", "animal": "Duck"},{"name": "Donald", "animal": "Duck"},{"name": "Howard", "animal": "Duck"}];
-    	var secondDb = db.db(collectionname);
+    	var newDB = db.db(databasename);
 
-        secondDb.insert(documents_to_insert, {w:1, fsync:true}, function(err, result) {
+        newDB.collection(collectionname).insert(documents_to_insert, {w:1, fsync:true}, function(err, result) {
         	if (err) return callback(err);   
-        	           
-       		secondDb.findAndModify({name:"Howard"}, [['name', 1]], {$set:{name:"Howard the Duck"}}, {new:true, fields: {_id:0}}, function(err, doc) {
+
+       		newDB.collection(collectionname).findAndModify({name:"Howard"}, [['name', 1]], {$set:{name:"Howard the Duck"}}, {new:true, fields: {_id:0}}, function(err, doc) {
 				if (err) return callback(err);
 
 				if (doc != null)
