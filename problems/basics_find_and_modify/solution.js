@@ -4,6 +4,10 @@ var collectionname = 'mycollection';
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 var async = require('async');
+var us = require('underscore');
+var sleep = require('sleep');
+sleep.sleep(1);
+
 
 MongoClient.connect(server, function(err, db) {
     if (err) {
@@ -12,8 +16,8 @@ MongoClient.connect(server, function(err, db) {
     }
  async.series([
     // Deterime if the specified database exits
-      function(callback) {
-  	// Check for the specific database twice then proceed or exit and further checks for collection in the database
+    function(callback) {
+  		// Check for the specific database twice then proceed or exit and further checks for collection in the database
 	  	db.command({listDatabases: 1 }, function(err, result) {
 	      if (err) callback(err);
 	      var databasedoc = us.find(result.databases, function(doc){ return doc.name == databasename; });
@@ -33,7 +37,6 @@ MongoClient.connect(server, function(err, db) {
 	      }
 	      else
 	      {
-	        sleep.sleep(1);
 	        db.command({listDatabases: 1 }, function(err, result) {
 	          if (err) callback(err);
 
@@ -69,16 +72,17 @@ MongoClient.connect(server, function(err, db) {
     	var secondDb = db.db(collectionname);
 
         secondDb.insert(documents_to_insert, {w:1, fsync:true}, function(err, result) {
-        if (err) return callback(err);              
-            secondDb.findAndModify({name:"Howard"}, [['name', 1]], {$set:{name:"Howard the Duck"}}, {new:true, fields: {_id:0}}, function(err, doc) {
-              if (err) return callback(err);
+        	if (err) return callback(err);   
+        	           
+       		secondDb.findAndModify({name:"Howard"}, [['name', 1]], {$set:{name:"Howard the Duck"}}, {new:true, fields: {_id:0}}, function(err, doc) {
+				if (err) return callback(err);
 
-              if (doc != null)
-              {
-                console.log(doc);
-              }
-              db.close();
-            }); // db.findAndModify
+				if (doc != null)
+				{
+					console.log(doc);
+				}
+				db.close();
+	        }); // db.findAndModify
         }); // db.insert 1
 
         callback(null);
