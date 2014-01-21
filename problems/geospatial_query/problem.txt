@@ -21,7 +21,8 @@ the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/
 ----------------------------------------------------------------------
 HINTS:
 
-In this exercise, you will need to use the $near geospatial operator (http://docs.mongodb.org/manual/reference/operator/query/near/#op._S_near) to find all the locations closest to the requested point.
+In this exercise, you will need to use the $near geospatial operator to find all the locations closest to the requested point. It's documentation is:
+{yellow}http://docs.mongodb.org/manual/reference/operator/query/near/#op._S_near{/yellow}
 
 The MongoDB 2D query index reference can be found at:
 {yellow}http://docs.mongodb.org/manual/tutorial/query-a-2d-index/{/yellow}
