@@ -6,6 +6,9 @@ var MongoClient = require('mongodb').MongoClient
 var async = require('async');
 var us = require('underscore');
 
+// The sleep module and call are used to delay the execution of the solution script to ensure
+// it does not check for the existing of the DB created by your program before it has a chance
+// to create the database. A lock file or other approach will be used in future.
 var sleep = require('sleep');
 sleep.sleep(1);
 
