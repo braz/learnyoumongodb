@@ -5,8 +5,9 @@ var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 var async = require('async');
 var us = require('underscore');
-var fs = require('fs');
-var zipsfile = 'zips.json';
+
+var sleep = require('sleep');
+sleep.sleep(1);
 
 MongoClient.connect(server, function(err, db) {
     if (err) {
@@ -20,7 +21,7 @@ MongoClient.connect(server, function(err, db) {
 
 		collection.indexInformation(function(err, indexitems) {
 			if (err) callback(err);
-			
+
 			var index_field_required = ['pop', 'state', 'city'];
 			var values = us.values(indexitems);
 			var flattened = us.flatten(values);
