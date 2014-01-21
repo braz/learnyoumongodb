@@ -1,4 +1,4 @@
-In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will USE the collection '{bold}zips{/bold}' but you will DELETE any existing documents / records in the collection.
+In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will USE the collection '{bold}zips{/bold}'.
 
 You will load all the records from the 'zips.json' file which is included in the module's data folder or you can download it directly from the MongoDB website (http://media.mongodb.org/zips.json with details at http://docs.mongodb.org/manual/tutorial/aggregation-zip-code-data-set/).
 
@@ -7,16 +7,14 @@ This file contains 29,469 documents with the following format:
 ....
 {"city": "THAYNE", "loc": [-111.011354, 42.933026], "pop": 505, "state": "WY", "_id": "83127"}
 
-Stage 1 - Connect to the database, 'mydatabase' and erase any information in the collection 'zips'.
+Stage 1 - Connect to the database, 'mydatabase' and import the file 'zips.json' using the Node MongoDB driver code and echo the number of records imported into the collection to the console.
 
-Stage 2 - Import the 'zips.json' using the Node MongoDB driver code and echo the number of records imported into the collection to the console.
+Stage 2 - You will create a compound index on the fields 'pop', state' and 'city'.
 
-Stage 3 - You will create a compound index on the fields 'pop', state' and 'city'.
-
-Stage 4 - You will query the collection to return the cities with a population over one thousand (1,000) people in the state of California or 'CA', these results should be sorted by population, state and city and the result should be outputted to the console.
+Stage 3 - You will query the collection to return the cities with a population over one thousand (1,000) people in the state of California or 'CA', these results should be sorted by population, state and city and the result should be outputted to the console.
 
 Your answer to the exercise will be run against the official solution to ensure
-that your query returns the correctly modified document.
+that your query returns the correctly documents.
 
 This exercise assumes a running MongoDB on your local machine. This means
 the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/yellow}{/bold}.

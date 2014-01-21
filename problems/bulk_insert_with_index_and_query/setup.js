@@ -1,4 +1,5 @@
 module.exports = function () {
+  var us = require('underscore');
   var async = require('async');
 
   var server = 'mongodb://127.0.0.1:27017/mydatabase';
@@ -7,17 +8,16 @@ module.exports = function () {
       , format = require('util').format;
 
   async.series([
-      // Setup for the exercise by ensuring there is no existing data in the 'zips' collection
+      // Setup for the exercise by ensuring there is no existing data
       function(callback) {
         MongoClient.connect(server, function(err, db) {
           if (err) return callback(err);
 
           db.dropCollection(collectionname, function(err, result) {
             if (err) return callback(err);
-
-              db.close(function(err, result) {
-                if (err) return callback(err);
-              }); //db.close      
+            db.close(function(err, result) {
+              if (err) return callback(err);
+            }); //db.close      
           }); //db.dropCollection
       }); // MongoClient.connect
       callback(null);
