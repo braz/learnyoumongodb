@@ -7,7 +7,7 @@ This file contains 29,469 documents with the following format:
 ....
 {"city": "THAYNE", "loc": [-111.011354, 42.933026], "pop": 505, "state": "WY", "_id": "83127"}
 
-Stage 1 - Connect to the database, 'mydatabase' and import the file 'zips.json' using the Node MongoDB driver code and echo the number of records imported into the collection to the console.
+Stage 1 - Connect to the database, 'mydatabase' and import the file 'zips.json' using the Node MongoDB driver code.
 
 Stage 2 - You will create a compound index on the fields 'pop', state' and 'city'.
 
