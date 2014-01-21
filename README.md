@@ -9,7 +9,7 @@
 
   1. Install [Node.js](http://nodejs.org/)
   2. Install [MongoDB](http://mongodb.org/)
-  3. Run `sudo npm install learnyoumongodb -g`
+  3. Run `sudo npm install braz/learnyoumongodb -g`
   4. Run `learnyoumongodb`
   5. **.. profit!**
 
