@@ -25,9 +25,9 @@ MongoClient.connect(server, function(err, db) {
 			var values = us.values(indexitems);
 			var flattened = us.flatten(values);
 			var cleaned = us.without(flattened, "_id", 1);
-			var valid_index = us.intersection(cleaned, index_key_items);
+			var valid_index = us.intersection(cleaned, index_field_required);
 			
-			if (valid_index.length == index_key_items.length) {
+			if (valid_index.length == index_field_required.length) {
 				collection.find({state: "CA", pop: { $gt: 75000 }}).sort({pop:1, state:1, city:1}).toArray(function(err, result) {
 		            if (err) callback(err);
 
