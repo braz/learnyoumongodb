@@ -1,6 +1,6 @@
 {
   "name": "learnyoumongodb",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Learn You MongoDB For Much Win! An introduction to MongoDB via a set of self-guided workshops.",
   "author": "Eoin Brazil <braz@mongodb.com> (https://github.com/braz)",
   "contributors": [
@@ -14,7 +14,8 @@
   "dependencies": {
     "workshopper": "~0.6.0",
     "through2": "~0.2.1",
-    "sleep": "~1.1.3"
+    "sleep": "~1.1.3",
+    "request": "~2.33.0"
   },
   "bin": {
     "learnyoumongodb": "./learnyoumongodb.js"

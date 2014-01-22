@@ -2,7 +2,7 @@ module.exports = function () {
   var async = require('async');
 
   var server = 'mongodb://127.0.0.1:27017/mydatabase';
-  var collectionname = 'zips';
+  var collectionname = 'hackernews';
   var MongoClient = require('mongodb').MongoClient 
       , format = require('util').format;
 
