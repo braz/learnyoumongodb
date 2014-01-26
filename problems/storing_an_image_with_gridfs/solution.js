@@ -58,7 +58,7 @@ MongoClient.connect(server, function(err, db) {
 					}
 
 
-			        collection.findOne({authormetadata}, function(err, result) {
+			        collection.findOne(authormetadata, function(err, result) {
 			            if (err) callback(err);
 
 			            if ( result.md5 != filemd5 ) {
