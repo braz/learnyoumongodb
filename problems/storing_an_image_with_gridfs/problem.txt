@@ -1,0 +1,36 @@
+In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will CREATE the collection '{bold}imagecollection{/bold}'.
+
+You will need to install an additional Node module for this exercise, 'request'. This can be installed using the {yellow}npm install request{yellow} command at your terminal / command line prompt.
+
+You will use this module to retrieve the MongoDB logo from the MongoDB site and save this image file into your database using gridFS. This approach allows you to store files larger than the document limit of 16MB in MongoDB. In this case, MongoDB acts as a file storage system though the use of a files collection (fs.files) and a chunks collection (fs.chunks) where the file is stored by being split into chunks and referenced from the record of the file in the files collection (see {yellow}http://docs.mongodb.org/manual/core/gridfs/{/yellow} for more details).
+
+Stage 1 - Download and install the NodeJS module, 'request'. This can be done using NPM (npm install request) or visit the project webpage for more details (https://github.com/mikeal/request).
+
+Stage 2 - Retrieve the file 'logo-mongodb.png' from the server 'http://media.mongodb.org/' (full url: http://media.mongodb.org/logo-mongodb.png) and store this in your local directory for use as the file that will be put into the database.
+
+Stage 3 - Connect to the database, {bold}'mydatabase'{/bold} and determine necessary information about the file 'logo-mongodb.png' prior to storing in GridFS. You will need to use the 'fs' module to open the file and gather the 'stat' information from the file to determine it's size prior to storing it in the database.
+
+Stage 4 -  Store the file 'logo-mongodb.png' in the database, {bold}'mydatabase'{/bold} using GridFS, this can be done in a number of ways (e.g. using Grid or GridStore for details see {yellow}http://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle2.html{/yellow}). 
+
+Stage 5 - Update the metadata associated with the file in the 'fs.files' collection and set the metadata using an update operation where the ObjectID obtained in Stage 4 to insert the file is used as part of your query. The format of the metadata is given below and the '$set' operator should be used to modify as well as creating any fields in the document rather than simply replacing the existing document.
+
+Stage 6 - Query the 'fs.files' collection for the ObjectID obtained in Stage 4 using the 'findOne' method and print the results of this method to the console.
+
+{blue}{"filename": "logo-mongodb.png", "contentType": "image/png","metadata":{"author": "MongoDB Inc."}}{/blue}
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query returns the correctly documents.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS
+
+In this exercise, you will need to use install the 'request' module and the specific image you should download and save to the database is found at {yellow}http://media.mongodb.org/logo-mongodb.png{/yellow}.
+
+The MongoDB GridStore reference can be found at:
+{yellow}http://docs.mongodb.org/manual/core/gridfs/{/yellow}
+
+The MongoDB Node Driver manual on the GridStore can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/gridstore.html{/yellow}
