@@ -34,7 +34,7 @@ MongoClient.connect(server, function(err, db) {
  	async.series([
     // Deterime if the specified database exits
 	function(callback) {
-        db.collectionNames(databasename).toArray(function(err, collectionslistfordb) {
+        db.collectionNames(function(err, collectionslistfordb) {
 			if (err) callback(err);
 
 			var collectionnames_to_find = ['fs.files','fs.chunks'];
