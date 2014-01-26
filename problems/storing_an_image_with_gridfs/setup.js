@@ -30,7 +30,7 @@ module.exports = function () {
   ],
   // callback and error handling
   function(err, results) {
-    if (err) console.warn(err.message);
+    if (err && err.message != "ns not found") console.warn(err.message);
   });
 
   return { args: [], stdin: null }
