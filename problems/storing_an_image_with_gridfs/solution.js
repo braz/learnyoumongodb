@@ -2,6 +2,7 @@ var server = 'mongodb://127.0.0.1:27017/mydatabase';
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 var filesCollection = 'fs.files';
+var databasename = 'mydatabase';
 var async = require('async');
 var fs = require('fs');
 var path = require('path');
@@ -33,9 +34,7 @@ MongoClient.connect(server, function(err, db) {
  	async.series([
     // Deterime if the specified database exits
 	function(callback) {
-	    var collection = db.collection(collectionname);
-
-        db.collectionNames(databasedoc.name).toArray(function(err, collectionslistfordb) {
+        db.collectionNames(databasename).toArray(function(err, collectionslistfordb) {
 			if (err) callback(err);
 
 			var collectionnames_to_find = ['fs.files','fs.chunks'];
@@ -81,7 +80,7 @@ MongoClient.connect(server, function(err, db) {
 				callback(error);
 			}
 			callback(null);
-		});
+		}); // db.collectionNames
 	},
   ],
   // callback and error handling
