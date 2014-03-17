@@ -25,7 +25,7 @@
 </tbody></table>
 
 You can find out more detailed information about contributing in the
-[contibution guide documentation][contributing].
+[contribution guide documentation][contributing].
 
 #### Code of Conduct
 Please read and follow our [Code of Conduct][coc].
@@ -35,5 +35,5 @@ Please read and follow our [Code of Conduct][coc].
 
 **learnyoumongodb** builds on the excellent work by [@rvagg](https://github.com/rvagg) who created **[Workshopper](https://github.com/rvagg/workshopper)** which serves as the original foundation and inspiration for **learnyoumongodb**.
 
-[contribute]: https://github.com/braz/learnyoumongodb/blob/master/CONTRIBUTING.md
+[contributing]: https://github.com/braz/learnyoumongodb/blob/master/CONTRIBUTING.md
 [coc]: https://github.com/braz/learnyoumongodb/blob/master/CODE_OF_CONDUCT.md
