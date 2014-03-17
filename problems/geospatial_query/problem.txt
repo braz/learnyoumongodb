@@ -1,4 +1,4 @@
-In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will USE the collection '{bold}zips{/bold}'.
+In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will USE the collection '{bold}zips{/bold}'. This exercise should be done after the exercise "Bulk Insert With Index And Query" as you will load and populate the collection 'zips' as part of that exercise, reusing the data here.
 
 This zips collection contains 29,469 documents with the following format:
 {"city": "ACMAR", "loc": [-86.51557, 33.584132], "pop": 6055, "state": "AL", "_id": "35004"}
