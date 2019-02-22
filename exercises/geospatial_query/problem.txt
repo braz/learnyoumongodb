@@ -1,0 +1,28 @@
+In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will USE the collection '{bold}zips{/bold}'. This exercise should be done after the exercise "Bulk Insert With Index And Query" as you will load and populate the collection 'zips' as part of that exercise, reusing the data here.
+
+This zips collection contains 29,469 documents with the following format:
+{"city": "ACMAR", "loc": [-86.51557, 33.584132], "pop": 6055, "state": "AL", "_id": "35004"}
+....
+{"city": "THAYNE", "loc": [-111.011354, 42.933026], "pop": 505, "state": "WY", "_id": "83127"}
+
+Stage 1 - Connect to the database, 'mydatabase' and query the collection 'zips' and print the number of records in this collection to the console.
+
+Stage 2 - You will create a geospatial index of type '2d' on the field 'loc'.
+
+Stage 3 - Find the cities nearest to the following coordinates in the database. Print the first three records (3) to the console for the cities closest to this location.
+{blue}{bold}{"loc" : [ -122.21, 37.78 ]}{/blue}{/bold}
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query returns the correctly documents.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS:
+
+In this exercise, you will need to use the $near geospatial operator to find all the locations closest to the requested point. It's documentation is:
+{yellow}http://docs.mongodb.org/manual/reference/operator/query/near/#op._S_near{/yellow}
+
+The MongoDB 2D query index reference can be found at:
+{yellow}http://docs.mongodb.org/manual/tutorial/query-a-2d-index/{/yellow}

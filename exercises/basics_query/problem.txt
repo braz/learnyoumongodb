@@ -1,0 +1,47 @@
+In this exercise, you will use the database '{bold}learnmymongodb{/bold}'
+running on your localhost (127.0.0.1) on port 27017 for your solution with the
+collection 'userdetails' being where the user information is stored. 
+
+You will need to count the users / documents which contain an age equal to or
+greater than a value specific in another document in the same collection. The
+value is specified in the field 'seek_this_age_or_older' and there is one (1)
+document in the collection 'userdetails' containing the value with the format:
+
+{blue}{bold}
+{ "seek_this_age_or_older" : VALUE_TO_USE_FOR_QUERY, "_id" : ObjectId("XXXX") }
+{/blue}{/bold}
+
+The other documents take the format in the collection 'userdetails':
+
+{blue}{bold}{ "firstname" : "tony",
+	"lastname" : "smith", 
+	"age" : 35, 
+	"username" : "tsmith", 
+	"email" : "tsmith@smith.com", 
+	"_id" : ObjectId("XXXX") 
+}{/blue}{/bold}
+
+You should count these documents (those containing the field 'age') for
+those with an age equal to or greater (older) than the value contained in field
+'seek_this_age_or_older' in the same collection. The result you will need to return
+to the console is the **count** or number of documents with this age or greater.
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query is targeting the correct age range of users.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/learnmymongodb'{/yellow}{/bold}.
+The collection will be {yellow}{bold}'userdetails'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS:
+
+In this exercise, you will need to use the `collection.find()` with the operator $gte
+method but you will need to restrict the find to the range of ages specified. You will
+need to find the value (seek_this_age_or_older) in the collection that specifies
+the age range to search.
+
+The collection document reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/collection.html{/yellow}
+and the streaming reference can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/cursorstream.html{/yellow}

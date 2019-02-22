@@ -1,0 +1,41 @@
+In this exercise, you will USE the database '{bold}mydatabase{/bold}' running on your localhost (127.0.0.1) in port 27017 and you will CREATE the collection '{bold}hackernews{/bold}'.
+
+You will need to install an additional Node module for this exercise, 'request'. This can be installed using the {yellow}npm install request{yellow} command at your terminal / command line prompt.
+
+You will use this module to collect and save the front page news from the popular news site, Hacker News. 
+
+You will create special kind of MongoDB index for this data, a text index. In order to create this type of index, you will need to enable text search in MongoDB (see {yellow}http://docs.mongodb.org/manual/tutorial/enable-text-search/{/yellow} for more details).
+
+The format of the page result you will receive as a JSON object contains the following:
+{blue}{bold}nextId:{/bold} ID for next page of links
+{bold}items:{/bold} array of links, which each link contain the following fields: commentCount, id, points, postedAgo, postedBy, title, url
+{bold}cachedOnUTC:{/bold} UTC date and time when request was cached{/blue}
+
+Stage 1 - Download and install the NodeJS module, 'request'. This can be done using NPM (npm install request) or visit the project webpage for more details (https://github.com/mikeal/request).
+
+Stage 2 - Connect to the Hacker News API and download the current news from its front page using this URL, {yellow}http://api.ihackernews.com/page{/yellow}.
+
+Stage 3 - Connect to the database, {bold}'mydatabase'{/bold} and import the current front page news of 'hacker news' into a new collection, {bold}'hackernews'{/bold}.
+
+Stage 4 - Enable the text search capability in MongoBD, this will require you running a command against the {bold}Admin{/bold} database or setting the parameter for your MongoDB when you start it. You must then create a text index on {bold}"title"{/bold} field.
+
+Stage 5 - Use MongoDB's text command to search the collection for the phrase {bold}"show hn"{bold} and print the results field to the console. You will need to use a different form of query for this with a format of {bold}'db.command({"text": collectionname, "search": searchstring})'{bold} as text search (in 2.4) does not support the 'find' method as it is still experimental.
+
+Your answer to the exercise will be run against the official solution to ensure
+that your query returns the correctly documents.
+
+This exercise assumes a running MongoDB on your local machine. This means
+the connection string will again be {yellow}{bold}'mongodb://127.0.0.1:27017/'{/yellow}{/bold}.
+
+----------------------------------------------------------------------
+HINTS
+
+In this exercise, you will need to use install the 'request' module and the specific page you should gather the data from is 'http://api.ihackernews.com/page'.
+
+You MUST also enable {bold}text search{/bold} in your MongoDB as this is not enabled by default (see {yellow}http://docs.mongodb.org/manual/tutorial/enable-text-search/{/yellow} for more details).
+
+The MongoDB text index tutorial can be found at:
+{yellow}http://docs.mongodb.org/manual/tutorial/create-text-index-on-multiple-fields/{/yellow}
+
+The MongoDB Node Driver manual on the Admin database can be found at:
+{yellow}http://mongodb.github.io/node-mongodb-native/api-generated/admin.html{/yellow}
